@@ -1,4 +1,5 @@
-# PulseDeck
+# Pulse
+First personal project, an audio player that includes a visualizer. More updates coming.
 
 ## Run
 
