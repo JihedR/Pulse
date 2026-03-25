@@ -1,16 +1,5 @@
 # PulseDeck
 
-PulseDeck is an Electron listening app with:
-
-- FLAC + common audio format loading
-- Metadata extraction (title/artist/album/duration/sample rate/codec)
-- Cover art support from embedded tags or sidecar image files (cover.jpg/folder.jpg/front.jpg/etc.)
-- Fullscreen reactive visualizer with album art in the center
-- Playlist + transport controls
-- Drag-and-drop for files and folders
-- Queue modes: shuffle, repeat all, repeat one, repeat none
-- Timeline hover preview with current/total time labels
-
 ## Run
 
 1. Install dependencies:
@@ -42,4 +31,3 @@ Use this fallback:
 ## Notes
 
 - Supported file extensions include: `.flac`, `.mp3`, `.wav`, `.aac`, `.m4a`, `.ogg`, `.opus`, `.webm`.
-- In some Windows environments (VPN/proxy/AV), Electron download can fail with an SSL error during `npm install`. If that happens, retry with a stable network or a mirror for Electron binaries.
