@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PulseDeck</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Outfit:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="titlebar" id="titlebar">
+      <div class="titlebar-drag" id="titlebar-drag">PulseDeck</div>
+      <div class="titlebar-actions">
+        <button id="win-minimize" class="title-btn" aria-label="Minimize">-</button>
+        <button id="win-maximize" class="title-btn" aria-label="Maximize">[]</button>
+        <button id="win-close" class="title-btn close" aria-label="Close">x</button>
+      </div>
+    </header>
+
+    <div class="ambient ambient-a"></div>
+    <div class="ambient ambient-b"></div>
+
+    <div id="visualizer-container">
+      <canvas id="visualizer"></canvas>
+    </div>
+
+    <main class="shell" id="app-shell">
+      <section class="left-panel">
+        <header class="brand-row">
+          <h1>PulseDeck</h1>
+          <p>FLAC + cover art visual listening deck</p>
+        </header>
+
+        <div class="actions">
+          <button id="add-files">Add audio files</button>
+          <button id="add-folder" class="secondary">Load folder</button>
+          <button id="toggle-shuffle" class="ghost">Shuffle: Off</button>
+          <button id="toggle-repeat" class="ghost">Repeat: All</button>
+          <button id="toggle-visualizer-mode" class="ghost">Visualizer: Ring</button>
+        </div>
+
+        <section class="now-playing" id="now-playing">
+          <img id="cover-image" src="" alt="Album cover" />
+          <div class="meta">
+            <h2 id="track-title">No track loaded</h2>
+            <p id="track-artist">Pick files or a folder to begin</p>
+            <p id="track-album"></p>
+            <p id="track-tech"></p>
+          </div>
+        </section>
+
+        <div class="controls">
+          <button id="prev">Prev</button>
+          <button id="play-pause">Play</button>
+          <button id="next">Next</button>
+          <div class="timeline-wrap">
+            <input id="progress" type="range" min="0" max="1000" value="0" />
+            <div id="timeline-preview" class="timeline-preview">0:00</div>
+          </div>
+        </div>
+        <div class="timeline-labels">
+          <span id="current-time">0:00</span>
+          <span id="total-time">0:00</span>
+        </div>
+
+        <ul id="playlist" class="playlist"></ul>
+      </section>
+
+      <button id="toggle-fullscreen" class="fab-fullscreen" title="Toggle Fullscreen UI">
+        <svg fill="currentColor" viewBox="0 0 24 24" width="24" height="24">
+          <path d="M5 5h5v2H7v3H5V5zm9 0h5v5h-2V7h-3V5zm5 14h-5v-2h3v-3h2v5zm-14 0v-5h2v3h3v2H5z"/>
+        </svg>
+      </button>
+
+      <section class="fullscreen-dock" id="fullscreen-dock">
+        <div class="fs-track" id="fs-track">No track</div>
+        <div class="fs-controls">
+          <button id="fs-prev" class="fs-btn">Prev</button>
+          <button id="fs-play-pause" class="fs-btn primary">Play</button>
+          <button id="fs-next" class="fs-btn">Next</button>
+          <div class="fs-timeline-wrap">
+            <input id="fs-progress" type="range" min="0" max="1000" value="0" />
+            <div class="fs-time-row">
+              <span id="fs-current-time">0:00</span>
+              <span id="fs-total-time">0:00</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="hud hidden" id="hud">
+        <span id="hud-title">No track</span>
+        <span id="hud-artist"></span>
+      </section>
+    </main>
+
+    <div id="drop-zone" class="drop-zone hidden">
+      <div class="drop-card">
+        <h3>Drop audio files or folders</h3>
+        <p>PulseDeck will add them to your playlist</p>
+      </div>
+    </div>
+
+    <audio id="audio" crossorigin="anonymous"></audio>
+    <script src="renderer.js"></script>
+  </body>
+</html>

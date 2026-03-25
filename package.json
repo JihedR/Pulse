@@ -1,0 +1,19 @@
+{
+  "name": "tester",
+  "version": "1.0.0",
+  "description": "Desktop audio listener with fullscreen visualizer and cover art",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron .",
+    "test": "echo \"No tests yet\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "electron": "^37.0.0",
+    "mime-types": "^3.0.2",
+    "music-metadata": "^11.12.3"
+  }
+}
